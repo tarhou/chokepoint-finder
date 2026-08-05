@@ -48,7 +48,36 @@ The agent has no external write tools. Its permitted state changes are confined 
 Chokepoint Finder MCP process: ingesting a baseline, ranking, relaying gated evidence,
 and recording proof. Your separately authorized tools act; you approve.
 
+## What you get
+
+Four artifacts, in the order the loop produces them:
+
+1. **A ranked shortlist.** Each action carries the risk it retires *given everything
+   above it is already done*, the findings and assets it covers, and the attack paths
+   it severs. Overlap is priced in once, so the numbers add up to the total rather
+   than past it.
+2. **A pre-flight verdict per action** — `PROCEED`, `HOLD` or `HOLD_PARTIAL` — with
+   the evidence behind it: which feed answered, when it was collected, exactly which
+   assets it covered, and what it could not see. A gate that cannot read its evidence
+   holds; it never assumes an all-clear.
+3. **An approval-bound execution manifest.** A canonical v3 document carrying an
+   immutable source-scope ID, the exact desired-state payload your executor will
+   consume, per-site rollout waves ordered by risk, and a SHA-256 plan hash. Approval
+   binds to that hash and to a specific step, so it is not transferable to another
+   change.
+4. **A verification receipt.** Findings before and after, what retired, what
+   reappeared, and the measured risk delta — the evidence a change record needs
+   before it closes. Simulated runs are labelled as such and can never close a real
+   record.
+
+Everything is returned to you as text and JSON in the conversation; the agent writes
+to no external system.
+
 ## Install
+
+**Prerequisites:** Claude Code, and a `python3` interpreter (3.11+) on `PATH` for the
+bundled ranking script. No third-party packages, no credentials, no API keys — the
+agent reaches your data through MCP servers you already run.
 
 Claude Code discovers subagents from `<project-root>/.claude/agents/` and
 `~/.claude/agents/` only. A clone nested inside another project (say
