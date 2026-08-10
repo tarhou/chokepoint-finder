@@ -143,4 +143,4 @@ This is a decision layer, not an unattended automation: per-step human approval 
 a design requirement, not an option. Ranking quality tracks metadata quality. Demo
 data across the family is synthetic and its numbers illustrative.
 
-Authors: Zane K ([@zkilling](https://github.com/zkilling)), Tarek H ([@tarhou](https://github.com/tarhou)). MIT license.
+Authors: Zane K ([@zkilling](https://github.com/zkilling)), Tarek H ([@tarhou](https://github.com/tarhou)), AJ ([@Ethosmos](https://github.com/ethosmos)). MIT license.
